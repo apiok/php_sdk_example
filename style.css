@@ -1,0 +1,32 @@
+
+#t {
+    display: table;
+    margin: 5px auto;
+}
+
+#tr {
+    display: table-row;
+    width: 100%;
+}
+
+#tc2 {
+    vertical-align: middle;
+    border: none;
+}
+
+.tc {
+    display: table-cell;
+    width: 33%;
+    border: 1px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px;
+}
+
+.pic {
+    border:1px solid silver;
+    margin:5px auto; 
+    display:block;
+    width: 128px;
+    height: 128px;
+}
