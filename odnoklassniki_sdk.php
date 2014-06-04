@@ -2,8 +2,6 @@
 class OdnoklassnikiSDK{
     const PARAMETER_NAME_ACCESS_TOKEN = "access_token";
     const PARAMETER_NAME_REFRESH_TOKEN = "refresh_token";
-    // you have to add here info about your application
-    // сюда необходимо добавить информацию о вашем приложении
     private static $app_id = "";
     private static $app_public_key = "";
     private static $app_secret_key = "";
@@ -84,7 +82,7 @@ class OdnoklassnikiSDK{
         $parameters[self::PARAMETER_NAME_ACCESS_TOKEN] = self::$access_token;
         $requestStr = "";
         foreach($parameters as $key=>$value){
-            $requestStr .= $key . "=" . $value . "&";
+            $requestStr .= $key . "=" . urlencode($value) . "&";
         }
         $requestStr = substr($requestStr, 0, -1);
         $curl = curl_init(self::$API_REQUSET_ADDRESS . "?" . $requestStr);
