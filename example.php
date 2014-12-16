@@ -50,7 +50,7 @@
                 printf($template, $current_user["pic_5"], $current_user["name"], $first_friend["pic_5"], $first_friend["name"]);
             }
         } else {
-        print "<div><a class=\"odkl-oauth-lnk\" href=\"http://www.odnoklassniki.ru/oauth/authorize?client_id=217568256&scope=VALUABLE_ACCESS&response_type=code&redirect_uri=http://artem.deaddev.com/php_sdk/example.php\"></a></div>";
+                printf("<div><a class=\"odkl-oauth-lnk\" href=\"%s\"></a></div>", OdnoklassnikiSDK::getAuthorizeUrl());
         }
         ?>
     </body>

@@ -6,10 +6,18 @@ class OdnoklassnikiSDK{
     private static $app_public_key = "";
     private static $app_secret_key = "";
     private static $redirect_url = "";
+    private static $scope = "VALUABLE_ACCESS";
     private static $TOKEN_SERVICE_ADDRESS = "http://api.odnoklassniki.ru/oauth/token.do";
     private static $API_REQUSET_ADDRESS = "http://api.odnoklassniki.ru/fb.do";
     private static $access_token;
     private static $refresh_token;
+    
+    public static function getAuthorizeUrl() {
+        return sprintf("http://www.odnoklassniki.ru/oauth/authorize?client_id=%s&scope=%s&response_type=code&redirect_uri=%s",
+                        urlencode(self::$app_id),
+                        urlencode(self::$scope),
+                        urlencode(self::$redirect_url));
+    } 
     
     public static function getAppId(){
         return self::$app_id;
